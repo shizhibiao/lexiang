@@ -2,7 +2,6 @@
 <div>
   <div class="head">
     <h1 class="title">乐享</h1>
-    
   </div>
   <app-content>
     <div class="nav">
