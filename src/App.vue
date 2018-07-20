@@ -5,10 +5,18 @@
 
     <!-- 底部tab -->
     <footer class="foot">
-      <li class="f-flex" v-for="(item, index) in footList" :key="index"
-       :class="{active: footActive==index}" @click="changeActive(index)">
-        {{item.title}}
-      </li>
+      <router-link to="/home" class="f-flex" @click="changeActive()">
+        <i class="iconfont icon-yuzhouxingqiu-21"></i>
+        乐享
+      </router-link>
+      <router-link to="/discover" class="f-flex" @click="changeActive()">
+        <i class="iconfont icon-find"></i>
+        发现
+      </router-link>
+      <router-link to="/mine" class="f-flex" @click="changeActive()">
+        <i class="iconfont icon-wo"></i>
+        我
+      </router-link>
     </footer>
     
   </div>
@@ -17,12 +25,7 @@
 export default {
   data(){
     return {
-      footActive: 0,
-      footList: [
-        {title: '乐享', path: '/home'},
-        {title: '发现', path: '/discover'},
-        {title: '我', path: '/mine'}
-      ]
+      footActive: 0
     }
   },
   methods: {
@@ -50,11 +53,13 @@ export default {
     .f-flex{
       flex: 1;
       text-align: center;
-      line-height: .49rem;
-      font-size: .1rem;
+      font-size: .12rem;
       color: #8E8E93;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .active{
+    .router-link-active{
       color: #EFC81F;
     }
   }

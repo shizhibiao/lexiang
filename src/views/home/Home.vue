@@ -2,6 +2,7 @@
 <div>
   <div class="head">
     <h1 class="title">乐享</h1>
+    <i class="iconfont icon-lexiangshouyetuijianx"></i>
   </div>
   <app-content>
     <div class="nav">
@@ -53,6 +54,13 @@ export default {
     left: 2px;
     background: #EDC71B;
     border-radius: 2px;
+  }
+  .head .icon-lexiangshouyetuijianx{
+    position: absolute;
+    right: .2rem;
+    top: .14rem;
+    color: #9B9B9B;
+    font-size: .18rem;
   }
 </style>
 
