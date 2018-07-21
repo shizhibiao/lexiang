@@ -10,7 +10,8 @@ export default {
     mounted(){
         //创建滚动视图
         let scroll = new IScroll(this.$refs.content, {
-            
+             click:true,
+             tap:true
         })
     }
 }
@@ -23,5 +24,7 @@ export default {
         top: .44rem;
         bottom: .49rem;
         overflow: hidden;
+        font-family: 'Mircosoft YaHei';
+        background:#F5F5F5
     }
 </style>

@@ -23,6 +23,7 @@ import Unused from '@/views/home/Unused.vue'
 
 //发现
 import Discover from '../views/discover/Discover.vue'
+import Native from '../views/discover/Native.vue'
 // 我
 import Mine from '../views/mine/Mine.vue'
 
@@ -65,7 +66,15 @@ export default new Router({
     },{
       path: '/discover',
       name: 'discover',
-      component: Discover
+      component: Discover,
+      children:[
+            {
+              name:'native',
+              path:'native',
+              component:Native
+            }
+      ]
+
     },{
       path: '/mine',
       name: 'mine',
