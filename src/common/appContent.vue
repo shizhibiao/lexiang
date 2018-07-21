@@ -37,6 +37,7 @@ export default {
         top: .44rem;
         bottom: .49rem;
         overflow: hidden;
-        
+        font-family: 'Mircosoft YaHei';
+        background:#F5F5F5
     }
 </style>
