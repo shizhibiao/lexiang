@@ -10,7 +10,8 @@ export default {
     mounted(){
         //创建滚动视图
         let scroll = new IScroll(this.$refs.content, {
-            
+            click:true,
+            tap:true
         })
     }
 }
