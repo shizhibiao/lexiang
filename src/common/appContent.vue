@@ -25,6 +25,13 @@ export default {
             interactiveScrollbars: true,
             //g滚动事件的监听方式
             probeType: 3
+        });
+        this.scroll = scroll;
+        // console.log(scroll)
+        //滚动开始前，识别最新高度
+        scroll.on('beforeScrollStart', ()=>{
+            //更新滚动视图
+            scroll.refresh();
         })
     }
 }

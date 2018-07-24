@@ -1,33 +1,72 @@
 <template>
-<div>
+<div class="page">
   <div class="head">
     <h1 class="title">乐享</h1>
     <i class="iconfont icon-lexiangshouyetuijianx"></i>
   </div>
-  <app-content>
-    <div class="nav">
-      <router-link to='/home/recommend'>推荐</router-link>
-      <router-link to='/home/attention'>关注</router-link>
-      <router-link to='/home/dynamic'>动态</router-link>
-      <router-link to='/home/article'>文章</router-link>
-      <router-link to='/home/amusing'>有趣</router-link>
-      <router-link to='/home/unused'>闲置</router-link>
+  <div class="nav">
+    <li class="nav-item" v-for="(item, index) in navList" 
+      :key="index" :class="{active: selectIndex == index}"
+      @click="changeActiveNav(index)" 
+    >
+      {{item}}
+    </li>
+  </div>
+  <div class="swiper-container hearContent" ref="content">
+    <div class="swiper-wrapper">
+        <content-item class="swiper-slide"
+           v-for="(item, index) in navList" :key="index"
+           > 
+        	{{item}}
+        </content-item>
     </div>
-    <router-view></router-view>
-  </app-content>
+	</div>
 </div>
 </template>
 <script>
+import contentItem from '../../common/homeIScroll.vue'
 export default {
+  components: {
+    contentItem
+  },
   data(){
     return {
-      
+      navList: ['推荐', '关注', '动态', '文章', '有趣', '闲置'],
+      selectIndex: 0
     }
+  },
+  methods: {
+    changeActiveNav(index){
+      //点击切换页面
+      this.newSwiper.slideTo(index, 0);
+      //nav头部切换
+      this.selectIndex = index;
+    }
+  },
+  mounted(){
+    //创建轮播视图
+    this.newSwiper = new Swiper(this.$refs.content, {
+      onSlideChangeEnd: (swiper)=>{
+        //翻页成功设置头部选中
+        this.selectIndex = swiper.activeIndex;
+      }
+    })
   }
 }
 </script>
 <style scoped>
+  .page{
+    position: absolute;
+    left: 0;;
+    top: 0;
+    bottom: .50rem;
+    width: 100%;
+    padding-top: 1.03rem;
+  }
   .nav{
+    position: absolute;
+    top: .44rem;
+    left: 0;
     height: .59rem;
     width: 100%;
     display: flex;
@@ -35,24 +74,18 @@ export default {
     align-items: center;
     background: #efefef;
   }
-  .nav a{
+  .nav .nav-item{
     color: #A6A2A1;
     font-size: .16rem;
     position: relative;
   }
-  .nav a.router-link-active{
-    color: #1A1A1A;
+  .page .nav .nav-item.active{
+    color: #EFC81F;
   }
-  .nav a.router-link-active::after{
-    content: '';
-    display: inline-block;
-    height: .02rem;
-    width: 90%;
-    position: absolute;
-    bottom: -.06rem;
-    left: 2px;
-    background: #EDC71B;
-    border-radius: 2px;
+  .hearContent{
+    width: 100%;
+    height: 100%;
+    background: #fff;
   }
   .head .icon-lexiangshouyetuijianx{
     position: absolute;
