@@ -1,7 +1,7 @@
 <template>
     <div class="Privacy">
         <mine-header title="屏蔽设置"></mine-header>
-        <app-content>
+        <mine-content>
            <nav class="nav">
                 <li class="item">
                 <div class="head-portrait add">
@@ -24,7 +24,7 @@
             </li>
            
         </nav>
-        </app-content>
+        </mine-content>
     </div>
 </template>
 

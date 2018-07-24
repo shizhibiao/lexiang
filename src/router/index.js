@@ -12,6 +12,23 @@ import Discover from '../views/discover/Discover.vue'
 import Native from '../views/discover/Native.vue'
 // 我
 import Mine from '../views/mine/Mine.vue'
+    // 我的头像
+    import Personal from '../views/mine/personal/Information.vue'
+        //  设置头像
+        import Personal1 from '../views/mine/personal/InformationSon1.vue'
+        // 设置昵称
+        import Personal2 from '../views/mine/personal/InformationSon2.vue'
+        //  设置签名
+        import Personal3 from '../views/mine/personal/InformationSon3.vue'
+        //  设置性别
+        import Personal4 from '../views/mine/personal/InformationSon4.vue'
+        //  设置地址
+        import Personal5 from '../views/mine/personal/InformationSon5.vue'
+            //  添加地址
+            import Personal6 from '../views/mine/personal/AddressSon.vue'
+
+
+        
     //  我的收藏
     import Collection from '../views/mine/collection/Collection.vue'
     // 我的消息
@@ -56,7 +73,43 @@ export default new Router({
             }
       ]
 
-    },{
+    },
+    {
+      path: '/personal',
+      name: 'personal',
+      component: Personal
+    },
+    {
+      path: '/personal1',
+      name: 'personal1',
+      component: Personal1
+    },
+    {
+      path: '/personal2',
+      name: 'personal2',
+      component: Personal2
+    },
+    {
+      path: '/personal3',
+      name: 'personal3',
+      component: Personal3
+    },
+    {
+      path: '/personal5',
+      name: 'personal5',
+      component: Personal5
+    },
+    {
+      path: '/personal4',
+      name: 'personal4',
+      component: Personal4
+    },
+    {
+      path: '/personal6',
+      name: 'personal6',
+      component: Personal6
+    },
+    {
       path: '/mine',
       name: 'mine',
       component: Mine

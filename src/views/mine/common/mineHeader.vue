@@ -1,19 +1,23 @@
 <template>
     <div class="head">
         <div class="back-mine" @click='backAction()'>
-            <i class="iconfont icon-zuojiantou"></i>
+            <i class="iconfont icon-zuojiantou" v-show='!show'></i>
             <span class="back">{{mine}}</span>
         </div>
         <h3>{{title}}</h3>
+        <div class="right">
+            <span class="right-word">{{right}}</span>
+        </div>
     </div>
 </template>
-
 
 <script>
 export default {
     props:{
         title:String,
-        mine:String
+        mine:String,
+        right:String,
+        show:String
     },
     methods:{
         backAction(){
@@ -50,5 +54,15 @@ export default {
             width: .7rem;
             text-align: center
         }
+    .right{
+      float: right;
+      height: .44rem;
+      width: .5rem;
+      padding-right: .1rem;
+      line-height: .44rem;
+      text-align: center;
+      font-size: .16rem;
+      color: #000;
+    }
 </style>
 
