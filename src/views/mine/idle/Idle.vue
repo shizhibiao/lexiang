@@ -1,9 +1,9 @@
 <template>
 <div class="myidle">
     <mine-header title='我的闲置'  mine='我'></mine-header>
-    <app-content>
+    <mine-content>
         <div v-for='(item,index) in dataArr' :key='index' :class='item.path' @click='jumpAction(item.path)'>{{item.title}}</div>
-    </app-content>
+    </mine-content>
     
 </div>
     

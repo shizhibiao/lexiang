@@ -1,7 +1,7 @@
 <template>
     <div class="Privacy">
         <mine-header title="隐私设置"></mine-header>
-        <app-content>
+        <mine-content>
             <div class="seeme">哪些人可以看到我的乐享</div>
             <div class="people">所有人<i class="icon-gouxuan iconfont" v-if="isChecked == 'people'"></i></div>
             <div class="my-follow">我关注的人<i class="icon-gouxuan iconfont"  v-if="isChecked == 'my-follow'"></i></div>
@@ -9,7 +9,7 @@
             <div class="seeme">我可以收到哪些人的私信</div>
             <div class="people">所有人<i class="icon-gouxuan iconfont" v-if="isChecked == 'people'"></i></div>
             <div class="my-follow">我关注的人<i class="icon-gouxuan iconfont" v-if="isChecked == 'my-follow'"></i></div>
-        </app-content>
+        </mine-content>
     </div>
 </template>
 

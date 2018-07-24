@@ -6,10 +6,10 @@
      <app-content>
        <div class="nicknamebox">
          
-          <img src="http://via.placeholder.com/120x120" class="head-portrait"/>
+          <img src="http://via.placeholder.com/120x120" class="head-portrait"  @click='modifyInformation()'/>
           <div class="nickname-content">
             <p class="nickname">昵称就是我的名字</p>
-            <p class="autograph">个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名</p>
+            <p class="autograph">签名：个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名</p>
           </div>
      </div>
      
@@ -51,6 +51,9 @@ export default {
   methods:{
       jumpAction(path){
         this.$router.push(path)
+      },
+      modifyInformation(){
+        this.$router.push('/personal')
       }
   },
   components: {
