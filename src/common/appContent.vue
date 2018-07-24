@@ -10,8 +10,21 @@ export default {
     mounted(){
         //创建滚动视图
         let scroll = new IScroll(this.$refs.content, {
-             click:true,
-             tap:true
+            //滚轮可以滚动
+            mouseWheel: true,
+            scrollbars: true,
+            //弹簧效果
+            bounce: false,
+            //滚动条淡入淡出
+            fadeScrollbars: true,
+            //在滚动视图中支持点击事件
+            click: true,
+            //移动端的点击事件
+            tap: true,
+            //可以拖动滚动条
+            interactiveScrollbars: true,
+            //g滚动事件的监听方式
+            probeType: 3
         })
     }
 }
