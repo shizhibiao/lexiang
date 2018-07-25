@@ -4,12 +4,10 @@
         <mine-content>
             <nav class="list">
                 <li class="item" v-for='(item,index) in addressList' :key='index'>
-                    <p class="name">{{item.name}}</p>
+                    <p class="name">{{item}}</p>
                     <p class="address">{{item.address}}</p>
                     <span class="i">!</span>
                 </li>
-                 
-                
             </nav>
             <div class="add-address" @click="addressAction()">
                 <span class="cancel iconfont icon-lexiangshouyetuijianx"></span>

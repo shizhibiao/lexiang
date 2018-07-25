@@ -11,14 +11,14 @@
             </div>
         </mine-content>
     </div>
+    
 </template>
 
 <script>
 export default {
     data(){
          return {
-             nameVal:'',
-             addressVal:''
+             
          }
     },
     methods:{

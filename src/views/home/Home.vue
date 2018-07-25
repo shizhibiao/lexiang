@@ -7,7 +7,7 @@
   <div class="nav">
     <li class="nav-item" v-for="(item, index) in navList" 
       :key="index" :class="{active: selectIndex == index}"
-      @click="changeActiveNav(index)" 
+      @click="changeActiveNav(index, item)" 
     >
       {{item}}
     </li>
@@ -24,7 +24,8 @@
 </div>
 </template>
 <script>
-import contentItem from '../../common/homeIScroll.vue'
+import contentItem from '../../common/homeIScroll.vue';
+import { getRecommendData } from '../../service/homeService.js';
 export default {
   components: {
     contentItem
@@ -51,6 +52,8 @@ export default {
         this.selectIndex = swiper.activeIndex;
       }
     })
+
+    getRecommendData();
   }
 }
 </script>
