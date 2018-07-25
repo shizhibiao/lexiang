@@ -1,9 +1,10 @@
 <template>
     <div class="head-portrait">
         <mine-header title='昵称' right='完成' mine='取消' show='1'></mine-header>
+         <div class="finish" @click='finishAction()'></div>
         <mine-content>
             <div class="nick-name">
-                <input type="text" class="input" v-model="nickVal"/><span class="cancel iconfont icon-lexiangshouyetuijianx" @click='cancelAcion()'></span>
+                <input type="text" class="input" v-model="nickVal" ref='nick'/><span class="cancel iconfont icon-lexiangshouyetuijianx" @click='cancelAcion()'></span>
             </div>
         </mine-content>
     </div>
@@ -19,12 +20,26 @@ export default {
     methods:{
         cancelAcion(){
             this.nickVal =''
+        },
+        finishAction(){
+         var nick = this.$refs.nick.value;
+         this.$store.dispatch('changeNickname',nick);
+         this.$router.back()
         }
     }
 }
 </script>
 
 <style scoped>
+    .finish{
+    width: .6rem;
+    height: .44rem;
+    position: absolute;
+   
+    right: 0;
+    top: 0;
+
+}
     .nick-name{
         margin-top: .15rem;
         width: 100%;

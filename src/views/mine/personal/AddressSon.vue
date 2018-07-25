@@ -4,10 +4,10 @@
         <div class="finish" @click='finishAction()'></div>
         <mine-content>
             <div class="name">
-                <input placeholder="姓名" type="text" class="input" v-model="nameVal" />
+                <input placeholder="姓名：XXX" type="text" class="input" v-model="nameVal" />
             </div>
             <div class="name">
-                <input placeholder="地址" type="text" class="input" v-model="addressVal"/>
+                <input placeholder="地址：XX省XX市" type="text" class="input" v-model="addressVal"/>
             </div>
         </mine-content>
     </div>
@@ -24,12 +24,12 @@ export default {
     methods:{
         finishAction(){
     
-            this.$pubsub.$emit('add-address',{
-               name: this.nameVal,
-               address:this.addressVal
+            this.$store.dispatch('changeAddresslist',{
+                name:this.nameVal,
+                address:this.addressVal
             })
-            this.addressVal = '';
-            this.nameVal = ''
+            
+            this.$router.back()
         }
     }
 }

@@ -1,9 +1,11 @@
 <template>
     <div class="head-portrait">
-        <mine-header title='头像' right='...' mine='返回'></mine-header>
+        <mine-header title='头像' right='完成' mine='返回'></mine-header>
+         <div class="finish" @click='finishAction()'></div>
+
         <mine-content>
             <div class="img">
-                <img src="https://goss.veer.com/creative/vcg/veer/612/veer-132289397.jpg"/>
+                <img src="https://goss.veer.com/creative/vcg/veer/612/veer-132289397.jpg" ref="imgsrc"/>
             </div>
             <nav class="list">
                 <li class="item">拍照</li>
@@ -13,9 +15,30 @@
         </mine-content>
     </div>
 </template>
-
+ 
+ <script>
+ export default {
+     methods:{
+         finishAction(){
+         var src = this.$refs.imgsrc.src;
+         this.$store.dispatch('changeHeadportrait',src);
+         this.$router.back()
+        }
+     }
+ }
+ </script>
+ 
 
 <style scoped>
+     .finish{
+    width: .6rem;
+    height: .44rem;
+    position: absolute;
+   
+    right: 0;
+    top: 0;
+
+}
     .img{
         width: 100%;
         height: 3.75rem;

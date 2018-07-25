@@ -6,23 +6,23 @@
      <app-content>
        <div class="nicknamebox">
          
-          <img src="http://via.placeholder.com/120x120" class="head-portrait"  @click='modifyInformation()'/>
+          <img :src="head" class="head-portrait"  @click='modifyInformation()'/>
           <div class="nickname-content">
-            <p class="nickname">昵称就是我的名字</p>
-            <p class="autograph">签名：个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名</p>
+            <p class="nickname">{{nickname}}</p>
+            <p class="autograph">签名：{{autograph}}</p>
           </div>
      </div>
      
      <nav class="lgf">
-       <li class="item">
+       <li class="item" @click='enjoymentAction("/enjoyment")'>
          <span>69</span>
          <p>乐享</p>
        </li>
-       <li class="item">
+       <li class="item"  @click='enjoymentAction("/follow")'>
          <span>100</span>
          <p>关注</p>
        </li>
-       <li class="item">
+       <li class="item"  @click='enjoymentAction("/fans")'>
          <span>101</span>
          <p>粉丝</p>
        </li>
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-
+import Vuex from 'vuex';
 export default {
   data(){
     return {
@@ -48,12 +48,20 @@ export default {
       ]
     }
   },
+  computed:Vuex.mapState({
+      nickname:'nickName',
+      autograph:'autoGraph',
+      head:'headPortrait'
+  }),
   methods:{
       jumpAction(path){
         this.$router.push(path)
       },
       modifyInformation(){
         this.$router.push('/personal')
+      },
+      enjoymentAction(index){
+        this.$router.push(index)
       }
   },
   components: {

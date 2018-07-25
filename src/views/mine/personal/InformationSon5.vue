@@ -21,13 +21,11 @@
 
 
 <script>
+import Vuex from 'vuex';
 export default {
     data(){
         return {
-            addressList:[{
-              name:'凯',
-              address:'深圳市宝安区深圳西部硅谷b座a606'
-            }]
+            
         }
     },
     methods:{
@@ -35,17 +33,10 @@ export default {
             this.$router.push('/personal6')
         }
     },
-    mounted(){
-        this.$pubsub.$on('add-address',(info)=>{
-            console.log(info.name)
-            this.addressList.push(info)
-         console.log(this.addressList)
-        
-        
-        
-           
-        })
-    }
+   computed:Vuex.mapState({
+    
+      addressList:'addressList'
+  })
 }
 </script>
 

@@ -12,46 +12,52 @@ import Discover from '../views/discover/Discover.vue'
 import Native from '../views/discover/Native.vue'
 // 我
 import Mine from '../views/mine/Mine.vue'
-    // 我的头像
-    import Personal from '../views/mine/personal/Information.vue'
-        //  设置头像
-        import Personal1 from '../views/mine/personal/InformationSon1.vue'
-        // 设置昵称
-        import Personal2 from '../views/mine/personal/InformationSon2.vue'
-        //  设置签名
-        import Personal3 from '../views/mine/personal/InformationSon3.vue'
-        //  设置性别
-        import Personal4 from '../views/mine/personal/InformationSon4.vue'
-        //  设置地址
-        import Personal5 from '../views/mine/personal/InformationSon5.vue'
-            //  添加地址
-            import Personal6 from '../views/mine/personal/AddressSon.vue'
+      // 我的头像
+      import Personal from '../views/mine/personal/Information.vue'
+          //  设置头像
+          import Personal1 from '../views/mine/personal/InformationSon1.vue'
+          // 设置昵称
+          import Personal2 from '../views/mine/personal/InformationSon2.vue'
+          //  设置签名
+          import Personal3 from '../views/mine/personal/InformationSon3.vue'
+          //  设置性别
+          import Personal4 from '../views/mine/personal/InformationSon4.vue'
+          //  设置地址
+          import Personal5 from '../views/mine/personal/InformationSon5.vue'
+              //  添加地址
+              import Personal6 from '../views/mine/personal/AddressSon.vue'
 
+      // 我的乐享
+      import Enjoyment from '../views/mine/enjoyment/Enjoyment.vue'
+      // 我的关注
+      import Follow from '../views/mine/follow/Follow.vue'
+      // 我的粉丝
+      import Fans from '../views/mine/fans/Fans.vue'
 
-        
-    //  我的收藏
-    import Collection from '../views/mine/collection/Collection.vue'
-    // 我的消息
-    import News from '../views/mine/news/News.vue'
-    // 我的闲置
-    import Idle from '../views/mine/idle/Idle.vue'
-        // 闲置里的发布
-          import IdleSon1 from '../views/mine/idle/IdleSon1.vue'
-        // 闲置里的买到
-          import IdleSon2 from '../views/mine/idle/IdleSon2.vue'
-        // 闲置里的收藏
-          import IdleSon3 from '../views/mine/idle/IdleSon3.vue'
-        // 闲置里的卖出
-          import IdleSon4 from '../views/mine/idle/IdleSon4.vue'
+          
+      //  我的收藏
+      import Collection from '../views/mine/collection/Collection.vue'
+      // 我的消息
+      import News from '../views/mine/news/News.vue'
+      // 我的闲置
+      import Idle from '../views/mine/idle/Idle.vue'
+          // 闲置里的发布
+            import IdleSon1 from '../views/mine/idle/IdleSon1.vue'
+          // 闲置里的买到
+            import IdleSon2 from '../views/mine/idle/IdleSon2.vue'
+          // 闲置里的收藏
+            import IdleSon3 from '../views/mine/idle/IdleSon3.vue'
+          // 闲置里的卖出
+            import IdleSon4 from '../views/mine/idle/IdleSon4.vue'
 
-    // 我的设置
-    import Setup from '../views/mine/setup/Setup.vue'
-        // 设置里的账号管理
-         import SetupSon1 from '../views/mine/setup/SetupSon1.vue'
-        // 设置里的隐私设置
-         import SetupSon2 from '../views/mine/setup/SetupSon2.vue'
-        // 屏蔽设置
-        import SetupSon3 from '../views/mine/setup/SetupSon3.vue'
+      // 我的设置
+      import Setup from '../views/mine/setup/Setup.vue'
+          // 设置里的账号管理
+          import SetupSon1 from '../views/mine/setup/SetupSon1.vue'
+          // 设置里的隐私设置
+          import SetupSon2 from '../views/mine/setup/SetupSon2.vue'
+          // 屏蔽设置
+          import SetupSon3 from '../views/mine/setup/SetupSon3.vue'
 
 
 //向外输出路由
@@ -108,6 +114,21 @@ export default new Router({
       path: '/personal6',
       name: 'personal6',
       component: Personal6
+    },
+    {
+      path: '/fans',
+      name: 'fans',
+      component: Fans
+    },
+    {
+      path: '/follow',
+      name: 'follow',
+      component: Follow
+    },
+    {
+      path: '/enjoyment',
+      name: 'enjoyment',
+      component: Enjoyment
     },
     {
       path: '/mine',

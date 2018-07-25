@@ -3,7 +3,7 @@
         <mine-header title="个人信息"  mine='返回'></mine-header>
         <mine-content>
             <nav class="information-list">
-                <router-link class="item-head" to='/personal1'><span>头像</span> <img src="http://via.placeholder.com/90x90" class="head-portrait"/><i class="iconfont icon-zuojiantou"></i></router-link>
+                <router-link class="item-head" to='/personal1'><span>头像</span> <img :src="head" class="head-portrait"/><i class="iconfont icon-zuojiantou"></i></router-link>
                 <router-link class="item" to='/personal2'>昵称<i class="iconfont icon-zuojiantou"></i></router-link>
                 <router-link class="item" to='/personal3'>签名<i class="iconfont icon-zuojiantou"></i></router-link>
                 <router-link class="item" to='/personal4'>性别<i class="iconfont icon-zuojiantou"></i></router-link>
@@ -12,6 +12,16 @@
         </mine-content>
     </div>
 </template>
+
+<script>
+import Vuex from 'vuex';
+export default {
+     computed:Vuex.mapState({
+    
+      head:'headPortrait'
+  })
+}
+</script>
 
 
 <style scoped>

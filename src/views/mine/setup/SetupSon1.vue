@@ -3,8 +3,8 @@
         <mine-header title="账号管理"></mine-header>
         <nav class="nav">
             <li class="item">
-                 <img src="http://via.placeholder.com/120x120" class="head-portrait"/>
-                 <div class="nickname">昵称就是我的名字</div>
+                 <img :src="head" class="head-portrait"/>
+                 <div class="nickname">{{nickname}}</div>
             </li>
             <li class="item">
                 <div class="head-portrait add">
@@ -19,6 +19,16 @@
     </div>
     
 </template>
+
+<script>
+import Vuex from 'vuex';
+export default {
+    computed:Vuex.mapState({
+      nickname:'nickName',
+      head:'headPortrait'
+  })
+}
+</script>
 
 
 <style scoped>
