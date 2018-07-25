@@ -4,12 +4,10 @@
         <mine-content>
             <nav class="list">
                 <li class="item" v-for='(item,index) in addressList' :key='index'>
-                    <p class="name">{{item.name}}</p>
+                    <p class="name">{{item}}</p>
                     <p class="address">{{item.address}}</p>
                     <span class="i">!</span>
                 </li>
-                 
-                
             </nav>
             <div class="add-address" @click="addressAction()">
                 <span class="cancel iconfont icon-lexiangshouyetuijianx"></span>
@@ -24,10 +22,9 @@
 export default {
     data(){
         return {
-            addressList:[{
-              name:'凯',
-              address:'深圳市宝安区深圳西部硅谷b座a606'
-            }]
+            addressList:  [],
+
+          
         }
     },
     methods:{
@@ -35,15 +32,20 @@ export default {
             this.$router.push('/personal6')
         }
     },
-    mounted(){
-        this.$pubsub.$on('add-address',(info)=>{
-            console.log(info.name)
-            this.addressList.push(info)
-         console.log(this.addressList)
+    created(){
+        this.$nextTick(()=>{
+             this.$pubsub.$on('add-address',(info)=>{
+
+                console.log(info.name);
+
+                console.log('监听到了')
+
+                this.addressList.push(info);
+                console.log(this.addressList)
+
+
+            })
         
-        
-        
-           
         })
     }
 }

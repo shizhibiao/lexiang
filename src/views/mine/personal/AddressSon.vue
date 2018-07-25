@@ -4,32 +4,38 @@
         <div class="finish" @click='finishAction()'></div>
         <mine-content>
             <div class="name">
-                <input placeholder="姓名" type="text" class="input" v-model="nameVal" />
+                <input placeholder="姓名" type="text" class="input" ref="username" />
             </div>
             <div class="name">
-                <input placeholder="地址" type="text" class="input" v-model="addressVal"/>
+                <input placeholder="地址" type="text" class="input" ref="password" />
             </div>
         </mine-content>
     </div>
+    
 </template>
 
 <script>
 export default {
     data(){
          return {
-             nameVal:'',
-             addressVal:''
+             
          }
     },
     methods:{
         finishAction(){
     
+            
             this.$pubsub.$emit('add-address',{
-               name: this.nameVal,
-               address:this.addressVal
+               name: this.$refs.username.value,
+               address:this.$refs.password.value
             })
-            this.addressVal = '';
-            this.nameVal = ''
+
+            // this.addressVal = '';
+            // this.nameVal = '';
+
+            this.$router.go(-1);
+
+            console.log('触发了');
         }
     }
 }

@@ -4,7 +4,7 @@
 */
 
 
-const RECOMMENT_DATA = './home.json';
+const RECOMMENT_DATA = '/api/home/dataList';
 
 
 export default {
