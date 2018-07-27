@@ -11,16 +11,16 @@
             </li>
             <li class="seeme">已屏蔽用户</li>
             <li class="item">
-                 <img src="http://via.placeholder.com/120x120" class="head-portrait"/>
-                 <div class="nickname">昵称就是我的名字</div>
+                 <img src="https://i04piccdn.sogoucdn.com/1d86e60977348f56" class="head-portrait"/>
+                 <div class="nickname">德莱文</div>
             </li>
              <li class="item">
-                 <img src="http://via.placeholder.com/120x120" class="head-portrait"/>
-                 <div class="nickname">我的名字就是昵称</div>
+                 <img src="https://i03piccdn.sogoucdn.com/8ea8dcb356dcd9f9" class="head-portrait"/>
+                 <div class="nickname">小鱼人</div>
             </li>
              <li class="item">
-                 <img src="http://via.placeholder.com/120x120" class="head-portrait"/>
-                 <div class="nickname">名字就是我的昵称</div>
+                 <img src="https://i04piccdn.sogoucdn.com/1d86e60977348f56" class="head-portrait"/>
+                 <div class="nickname">诺克</div>
             </li>
            
         </nav>

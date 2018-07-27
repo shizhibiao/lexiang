@@ -4,7 +4,7 @@
         <mine-content>
             <nav class="list">
                 <li class="item" v-for='(item,index) in addressList' :key='index'>
-                    <p class="name">{{item}}</p>
+                    <p class="name">{{item.name}}</p>
                     <p class="address">{{item.address}}</p>
                     <span class="i">!</span>
                 </li>

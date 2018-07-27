@@ -1,6 +1,6 @@
 <template>
     <div class="add-address">
-        <mine-header title='修改地址' right='完成'></mine-header>
+        <mine-header title='新增地址' right='完成'></mine-header>
         <div class="finish" @click='finishAction()'></div>
         <mine-content>
             <div class="name">
@@ -18,7 +18,8 @@
 export default {
     data(){
          return {
-             
+             nameVal:'',
+             addressVal:''
          }
     },
     methods:{

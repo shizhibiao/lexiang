@@ -3,8 +3,9 @@
         <mine-header title='昵称' right='完成' mine='取消' show='1'></mine-header>
          <div class="finish" @click='finishAction()'></div>
         <mine-content>
+            <div class="prompt" v-if='isPrompt'>昵称不能为空！</div>
             <div class="nick-name">
-                <input type="text" class="input" v-model="nickVal" ref='nick'/><span class="cancel iconfont icon-lexiangshouyetuijianx" @click='cancelAcion()'></span>
+                <input type="text" class="input" ref='nick'/><span class="cancel iconfont icon-lexiangshouyetuijianx" @click='cancelAcion()'></span>
             </div>
         </mine-content>
     </div>
@@ -14,17 +15,21 @@
 export default {
     data(){
         return {
-            nickVal:''
+            isPrompt:false
         }
     },
     methods:{
         cancelAcion(){
-            this.nickVal =''
+            this.$refs.nick.value = ''
         },
         finishAction(){
-         var nick = this.$refs.nick.value;
-         this.$store.dispatch('changeNickname',nick);
-         this.$router.back()
+        
+         if(this.$refs.nick.value){
+             this.$store.dispatch('changeNickname',this.$refs.nick.value);
+             this.$router.back()            
+         }else{
+             this.isPrompt = true
+         }
         }
     }
 }
@@ -40,8 +45,14 @@ export default {
     top: 0;
 
 }
+    .prompt{
+        margin-top: .1rem;
+        margin-left: .2rem;
+        color: red;
+        font-size: .14rem
+    }
     .nick-name{
-        margin-top: .15rem;
+        margin-top: .1rem;
         width: 100%;
         height: .45rem;
         background: #fff;

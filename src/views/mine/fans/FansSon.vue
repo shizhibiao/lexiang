@@ -1,32 +1,34 @@
 <template>
   <div class="mine">
      <div class="head">
-       <h1 class="title">我的</h1>
+       <h1 class="title">{{fans[1]}}</h1>
+        <i class="iconfont icon-zuojiantou" @click='backAction()'></i>
      </div>
      <app-content>
-        <div class="nicknamebox">        
-          <img :src="head" class="head-portrait"  @click='modifyInformation()'/>
+       <div class="nicknamebox">
+         
+          <img :src="fans[0]" class="head-portrait" />
           <div class="nickname-content">
-            <p class="nickname">{{nickname}}</p>
-            <p class="autograph">签名：{{autograph}}</p>
+            <p class="nickname">{{fans[1]}}</p>
+            <p class="autograph">签名：{{fans[2]}}</p>
           </div>
-        </div>
+     </div>
      
-        <nav class="lgf">
-          <li class="item" @click='enjoymentAction("/enjoyment")'>
-            <span>69</span>
-            <p>乐享</p>
-          </li>
-          <li class="item"  @click='enjoymentAction("/follow")'>
-            <span>100</span>
-            <p>关注</p>
-          </li>
-          <li class="item"  @click='enjoymentAction("/fans")'>
-            <span>101</span>
-            <p>粉丝</p>
-          </li>
-        </nav>
-        <div v-for='(item,index) in dataArr' :key='index' :class='item.path' @click='jumpAction(item.path)'>{{item.title}}</div>
+     <nav class="lgf">
+       <li class="item">
+         <span>54</span>
+         <p>乐享</p>
+       </li>
+       <li class="item">
+         <span>50</span>
+         <p>关注</p>
+       </li>
+       <li class="item">
+         <span>81</span>
+         <p>粉丝</p>
+       </li>
+     </nav>
+     <div v-for='(item,index) in dataArr' :key='index' :class='item.path'>{{item.title}}</div>
      
      </app-content>
   </div>
@@ -38,27 +40,20 @@ export default {
   data(){
     return {
       dataArr:[
-        {title:'我的收藏',path:'collection'},
-        {title:'我的闲置',path:'idle'},
-        {title:'我的消息',path:'news'},
-        {title:'我的设置',path:'setup'}
+        {title:'他的收藏',path:'collection'},
+        {title:'他的闲置',path:'idle'},
+        
       ]
     }
   },
   computed:Vuex.mapState({
-      nickname:'nickName',
-      autograph:'autoGraph',
-      head:'headPortrait'
+      fans:'fans'
   }),
   methods:{
-      jumpAction(path){
-        this.$router.push(path)
-      },
-      modifyInformation(){
-        this.$router.push('/personal')
-      },
-      enjoymentAction(index){
-        this.$router.push(index)
+     
+      
+      backAction(){
+          this.$router.back()
       }
   },
   components: {
@@ -147,5 +142,14 @@ export default {
     font-size: .16rem;
     line-height: .45rem;
     color: #000
+  }
+  .head{
+      position: relative;
+  }
+  .iconfont{
+      position: absolute;
+      top: .1rem;
+      left: .2rem;
+      font-size: .14rem
   }
 </style>

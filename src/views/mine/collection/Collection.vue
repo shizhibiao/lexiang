@@ -5,7 +5,7 @@
             <nav class="collection-list">
                  <li class="nicknamebox">
                      <div class="nick">
-                            <img src="http://via.placeholder.com/120x120" class="head-portrait"/>
+                            <img src="https://i03piccdn.sogoucdn.com/8ea8dcb356dcd9f9" class="head-portrait"/>
                             <div class="nickname-content">
                                 <p class="nickname">昵称就是我的名字</p>
                                 <p class="autograph"><span class="date">6-28</span><span class="browser">来自360安全浏览器</span></p>
@@ -21,7 +21,7 @@
                 </li>
                 <li class="nicknamebox">
                      <div class="nick">
-                            <img src="http://via.placeholder.com/120x120" class="head-portrait"/>
+                            <img src="https://i03piccdn.sogoucdn.com/8ea8dcb356dcd9f9" class="head-portrait"/>
                             <div class="nickname-content">
                                 <p class="nickname">昵称就是我的名字</p>
                                 <p class="autograph"><span class="date">6-28</span><span class="browser">来自360安全浏览器</span></p>
@@ -35,22 +35,7 @@
                         <span class="fabulous"><i class="iconfont icon-dianzan"></i>999</span>
                     </div>
                 </li>
-                <li class="nicknamebox">
-                     <div class="nick">
-                            <img src="http://via.placeholder.com/120x120" class="head-portrait"/>
-                            <div class="nickname-content">
-                                <p class="nickname">昵称就是我的名字</p>
-                                <p class="autograph"><span class="date">6-28</span><span class="browser">来自360安全浏览器</span></p>
-                            </div>
-                    </div>
-                    <div class="collection-content">
-                       打工是不可能打工的，这辈子不可能打工的。只有偷车才可以维持的了生活这样子。
-                    </div>   
-                    <div class="f-f">
-                        <span class="forward"><i class="iconfont icon-31zhuanfa"></i>999</span>
-                        <span class="fabulous"><i class="iconfont icon-dianzan"></i>999</span>
-                    </div>
-                </li>
+                
             </nav>
         </mine-content>
     </div>

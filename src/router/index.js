@@ -29,10 +29,16 @@ import Mine from '../views/mine/Mine.vue'
 
       // 我的乐享
       import Enjoyment from '../views/mine/enjoyment/Enjoyment.vue'
+          // 转发乐享
+          import Forward from '../views/mine/enjoyment/Forward.vue'
+
       // 我的关注
       import Follow from '../views/mine/follow/Follow.vue'
       // 我的粉丝
       import Fans from '../views/mine/fans/Fans.vue'
+          // 粉丝或关注个人信息
+          import FansSon from '../views/mine/fans/FansSon.vue'
+
 
           
       //  我的收藏
@@ -121,6 +127,11 @@ export default new Router({
       component: Fans
     },
     {
+      path: '/fansson',
+      name: 'fansson',
+      component: FansSon
+    },
+    {
       path: '/follow',
       name: 'follow',
       component: Follow
@@ -129,6 +140,11 @@ export default new Router({
       path: '/enjoyment',
       name: 'enjoyment',
       component: Enjoyment
+    },
+    {
+      path: '/forward',
+      name: 'forward',
+      component: Forward
     },
     {
       path: '/mine',

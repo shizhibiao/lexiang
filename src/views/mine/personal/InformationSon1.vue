@@ -5,31 +5,47 @@
 
         <mine-content>
             <div class="img">
-                <img src="https://goss.veer.com/creative/vcg/veer/612/veer-132289397.jpg" ref="imgsrc"/>
+                <img src="https://i03piccdn.sogoucdn.com/9488141a00b4a44b" ref="imgsrc" @click='isShowAction()'/>
             </div>
-            <nav class="list">
-                <li class="item">拍照</li>
-                <li class="item">从手机相册选择</li>
-            </nav>
-            <div class="cancel">取消</div>
+            <transition name="slide">
+                <div class="slide-up" v-show='isShow'>
+                    <nav class="list">
+                        <li class="item">拍照</li>
+                        <li class="item">从手机相册选择</li>
+                    </nav>
+                    <div class="cancel" @click='isShowAction()'>取消</div>
+                </div>
+            </transition>
         </mine-content>
     </div>
 </template>
  
  <script>
  export default {
+     data(){
+         return {
+             isShow:false
+         }
+     },
      methods:{
          finishAction(){
          var src = this.$refs.imgsrc.src;
          this.$store.dispatch('changeHeadportrait',src);
          this.$router.back()
-        }
+        },
+        isShowAction(){
+            this.isShow = !this.isShow
+        }   
      }
  }
  </script>
  
 
 <style scoped>
+.slide-up{
+    position: absolute;
+    width: 100%
+}
      .finish{
     width: .6rem;
     height: .44rem;
@@ -74,9 +90,24 @@
         text-align: center;
         font-size: .2rem;
         color: #000;
-        position: absolute;
+        /* position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: 0; */
+        margin-top: .4rem;
         background: #fff
+    }
+    @keyframes sildeIn {
+        0%{transform:translateY(100%)}
+         100%{transform:translateY(0%)}
+    }
+    @keyframes sildeOut {
+        0%{transform:translateY(0%)}
+         100%{transform:translateY(100%)}
+    }
+    .slide-enter-active{
+        animation: sildeIn 500ms;
+    }
+     .slide-leave-active{
+        animation: sildeOut 300ms;
     }
 </style>

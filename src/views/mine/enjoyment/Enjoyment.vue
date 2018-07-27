@@ -5,7 +5,7 @@
             <nav class="collection-list">
                  <li class="nicknamebox">
                      <div class="nick">
-                            <img :src="head" class="head-portrait"/>
+                            <img :src="head" class="head-portrait"  @click='modifyInformation()' />
                             <div class="nickname-content">
                                 <p class="nickname">{{nickname}}</p>
                                 <p class="autograph"><span class="date">6-28</span><span class="browser">来自360安全浏览器</span></p>
@@ -34,6 +34,11 @@ export default {
      
       head:'headPortrait'
   }),
+  methods:{
+       modifyInformation(){
+        this.$router.push('/personal')
+      }
+  }
 }
 </script>
 
@@ -42,7 +47,8 @@ export default {
 <style scoped lang='scss'>
     .iconfont{
         font-size: .18rem;
-        margin-right: .1rem
+        margin-right: .1rem;
+        color: #edc71b;
     }
     .nicknamebox{
         width: 100%;
